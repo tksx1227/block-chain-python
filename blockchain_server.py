@@ -66,7 +66,7 @@ def transaction():
         )
         if not is_created:
             return jsonify({"message": "fail"}), 400
-        return jsonify({"message": "success"}), 200
+        return jsonify({"message": "success"}), 201
 
 
 if __name__ == "__main__":
