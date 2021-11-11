@@ -61,5 +61,16 @@ def find_neighbours(my_host, my_port, start_ip_range, end_ip_range, start_port, 
     return neighbours
 
 
+def get_host():
+    try:
+        return socket.gethostbyname(socket.gethostname())
+    except Exception as ex:
+        logger.debug({
+            "action": "get_host",
+            "ex": ex
+        })
+        return "127.0.0.1"
+
+
 if __name__ == "__main__":
     print(find_neighbours("192.168.2.103", 5000, 0, 3, 5000, 5003))
